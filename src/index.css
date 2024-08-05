@@ -1,13 +1,46 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+    *{
+        @apply text-white
+    }
+    body{
+        @apply bg-mybg
+    }
+    nav{
+        @apply h-[5rem] w-screen mx-auto py-[1rem] px-[2rem] flex items-center justify-between sticky top-0 z-[3] max-w-[75rem]
+    }
+    .active{
+        @apply text-rose-600 border-b-[3px] border-rose-600 pb-[0.5rem]
+    }
+    .desktopMenu{
+        @apply sm:flex hidden
+    }
+
+    .desktopMenuListItem {
+        @apply m-[1rem] cursor-pointer hover:text-rose-600 hover:pb-[0.5rem] hover:border-b-[3px] hover:border-rose-600
+    }
+    .ListItem{
+        @apply text-white py-[.5rem] px-[3rem] m-[.25rem]
+    }
+    .skillBar {
+        @apply flex m-[1rem] py-[1.5rem] px-[2rem] rounded-[.5rem] bg-secondbg
+    }
+    .skillBarImg {
+        @apply object-cover h-[3rem] w-[3rem] mr-[2rem]
+    }
+    .skillBarText p{
+        @apply text-[1rem] font-extralight
+    }
+    .work{
+        @apply cursor-pointer bg-white mb-[2rem] m-[.5rem] h-[30rem] w-[20rem] rounded-lg
+    }
+    .work img{
+        @apply cursor-pointer w-full object-cover 
+    }
+    .work span{
+        @apply font-medium uppercase
+    }
 }
